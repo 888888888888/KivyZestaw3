@@ -1,0 +1,640 @@
+#:kivy 1.0.9
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ScreenManager:
+    transition: FadeTransition()
+    Menu:
+    Quiz1:
+    Quiz2:
+    Quiz3:
+    Quiz4:
+    Quiz5:
+    Quiz6:
+    Quiz7:
+    Quiz8:
+
+<Electron>:
+    canvas:
+        Ellipse:
+            source: "elektron.png"
+            pos: self.pos
+            size: 50, 50
+<Buzka>:
+    canvas:
+        Ellipse:
+            source: "buzka.png"
+            pos: self.pos
+            size: 100, 100
+<Logo>:
+    canvas.before:
+        Rectangle:
+            source: "solaris.png"
+            pos: self.pos
+            size: root.width, root.height
+
+<Menu>:
+    name: "main"
+
+    FloatLayout:
+        Logo:
+            id: solaris
+
+    Button:
+        on_release: app.root.current = "pytanie1"
+        text: str(root.start)
+        size_hint: 0.3, 0.2
+        font_size: 25
+        top: root.height/4
+        center_x: root.width/2 - 100
+
+    Label:
+        color: 0, 0, 0, 1
+        font_size: 40
+        center_x: self.width / 2 - 20
+        top: 1.5 * self.height - 100
+        text: str(root.nazwaGry)
+
+<Quiz1>:
+    name: "pytanie1"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie2"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+        
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+ str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"W jakim miescie powstaje pierwszy w Polsce synchrotron?"
+
+        Label:
+            font_size: 30
+            text: "Krakow"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Warszawa"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Wroclaw"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "Poznan"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+        Buzka:
+            id: buzka
+            x: root.width * 9 / 10
+            y: 0
+<Quiz2>:
+    name: "pytanie2"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie3"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"Z jaka uczelnia powiazany jest ten projekt?"
+
+        Label:
+            font_size: 30
+            text: "Uniwersytet Jagiellonski"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Politechnika Krakowska"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Akademia Gorniczo-Hutnicza"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "KSW"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+<Quiz3>:
+    name: "pytanie3"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie4"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"Na podstawie jakiego sychrotronu budowany jest ten Polski?"
+
+        Label:
+            font_size: 30
+            text: "MAX IV"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Fermilab"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "PAL"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "DIAMOND"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+        Buzka:
+            id: buzka
+            x: root.width * 9 / 10
+            y: 0
+<Quiz4>:
+    name: "pytanie4"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie5"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"Magnesy uzywane w polskim sychrotronie sa?"
+
+        Label:
+            font_size: 30
+            text: "Pierwsze takie na swiecie"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Bardzo duze i energozerne"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "W ksztalcie loga firmy Solaris"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "W sychrotronie nie ma magnesow!"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+        Buzka:
+            id: buzka
+            x: root.width * 9 / 10
+            y: 0
+<Quiz5>:
+    name: "pytanie5"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie6"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: 0
+            center_y: root.height - 150
+            text:"Do tego czasu wiazka elektronowa (pierwsza w Polsce) przebywala w sychrotronie przez?"
+
+        Label:
+            font_size: 30
+            text: "2 lata"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "10 minut"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "2 sekundy"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "Jeszcze nie udalo sie jej otrzymac"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+<Quiz6>:
+    name: "pytanie6"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie7"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: 0
+            center_y: root.height - 150
+            text:"Promieniowanie sychrotronowe pomoglo w odkryciu kilku przelomowych metod w..."
+
+        Label:
+            font_size: 30
+            text: "Budownictwie"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Informatyce"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Fizyce"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "Medycynie"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+        Buzka:
+            id: buzka
+            x: root.width * 9 / 10
+            y: 0
+<Quiz7>:
+    name: "pytanie7"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "pytanie8"
+            text: "Nastepne pytanie"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"Na kiedy przewidzaine jest oddanie sychrotronu?"
+
+        Label:
+            font_size: 30
+            text: "Na nastepny rok"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Za 2 lata"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "Nie wiadomo"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "Juz w tym roku"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
+<Quiz8>:
+    name: "pytanie8"
+    a: electron
+    b: electron2
+    c: electron3
+    d: electron4
+    FloatLayout:
+        Button:
+            on_release: app.root.current = "end"
+            text: "Koniec"
+            size_hint: 0.3, 0.2
+            font_size: 25
+            top: 100
+            center_x: root.width/2 - 100
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height * 1 / 5
+            text: "Dobre odpowiedzi:"+str(root.dobre)
+
+        Label:
+            font_size: 30
+            center_x: root.width * 3 / 7
+            center_y: root.height * 1 / 5
+            text: "Zle odpowiedzi:"+str(root.zle)
+
+        Label:
+            font_size: 30
+            center_x: root.width/ 10
+            center_y: root.height - 150
+            text:"Ile usmiechnietych buziek jest na prezentacji?"
+
+        Label:
+            font_size: 30
+            text: "2"
+            center_x: root.center_x / 30
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "3"
+            center_x: root.center_x
+            center_y: root.center_y + 80
+        Label:
+            font_size: 30
+            text: "1"
+            center_x: root.center_x / 30
+            center_y: root.center_y - 120
+        Label:
+            font_size: 30
+            center_x: root.center_x
+            center_y: root.center_y - 120
+            text: "4"
+        Electron:
+            id: electron
+            x: root.center_x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron2
+            x: root.x
+            y: root.center_y + 100
+
+        Electron:
+            id: electron3
+            x: root.center_x
+            y: root.center_y - 100
+
+        Electron:
+            id: electron4
+            x: root.x
+            y: root.center_y - 100
